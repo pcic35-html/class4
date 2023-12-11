@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;" lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<title>擲骰子</title>
+		<style>
+			body{
+				width: 100%;
+				height: 100%;
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.dice{
+				width:min(90%,800px);
+				height:min(90%,800px);
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: center;
+				align-content: center;
+			}
+			.dice_image{
+				width:10%;
+				height:10%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dice" id="dice">
+			<img src="0.svg" class="dice_image">
+		</div>
+		<button onclick="dice()">擲骰子</button>
+		<script>
+			function randomint(l,r){
+				let loop=r-l+1;
+				let a=Math.random();
+				a*=loop;
+				a+=l;
+				a=Math.floor(a);
+				return a;
+			}
+			function dice(){
+				let a=randomint(1,6);
+				let b=randomint(1,6);
+				let imgtxt='<img src="'+String(a)+'.svg" class="dice_image">';
+				imgtxt+='<img src="'+String(b)+'.svg" class="dice_image">';
+				document.getElementById("dice").innerHTML=imgtxt;
+			}
+		</script>
+
+	</body>
+</html>

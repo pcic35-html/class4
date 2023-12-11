@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;" lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<title>擲骰子</title>
+		<style>
+			body{
+				min-height:100%;
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.dice{
+				width:min(80%,800px);
+				height:auto;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: center;
+				align-content: center;
+			}
+			.dice_image{
+				width:40px;
+				height:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dice" id="dice">
+			<img src="0.svg" class="dice_image">
+		</div>
+		<input type="number" id="dice_count" value="3" onkeydown="dice()">
+		<input type="submit" onclick="dice()" value="擲骰子">
+		<script>
+			function randomint(l,r){
+				let loop=r-l+1;
+				let a=Math.random();
+				a*=loop;
+				a+=l;
+				a=Math.floor(a);
+				return a;
+			}
+			function dice(){
+				let n=document.getElementById("dice_count").value;//取得輸入框的值
+				document.getElementById("dice").innerHTML="";//先把上次的結果清空
+				let str="";
+				for(let i=0;i<n;i++){  //產生n顆骰子
+					let a=randomint(1,6);
+					let imgtxt='<img src="'+String(a)+'.svg" class="dice_image">';
+					str+=imgtxt;//將新的骰子加入
+				}
+				document.getElementById("dice").innerHTML=str;//更新結果
+			}
+		</script>
+
+	</body>
+</html>
