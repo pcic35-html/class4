@@ -1,5 +1,5 @@
 # HTML basic IV
-幫我想想我可以在這邊寫甚麼
+幫我想想我可以在這邊寫甚麼  
 # 擲骰子 II
 ET01喜歡打日麻，每次開牌時都需要骰兩顆骰子來決定：要從誰前面的排山開始抓牌、從第幾墩抓牌  
 問題來了，我們的擲骰子web只有一顆骰子，顯然我們需要寫一個可以擲兩顆骰子的web  
@@ -38,20 +38,20 @@ function dice(){
 等一下，我們的 `HTML` code 只有安排一個空間（一個`id`）來顯示，但我們有兩顆骰子  
 我們要把兩個數字以字串的方式合併，變成一串字串，再把他放進`innerHTML`裡面  
 終於來到今天的重點了  
-# string 字串
+# `JS` string 字串
 如何宣告
 ```js
 let a="字串";
 let b='也可以用單引號';
 ```
-# 字串的合併
+# `JS` 字串的合併
 把他們加起來就好了
 ```js
 let a="a";
 let b=a+a;//  b="aa"
 b+="test";//  b=b+"test"	b="aatest"
 ```
-# `String()` 數字轉字串
+# `JS` `String()` 數字轉字串
 可以使用 `String(n)` 將數字轉成字串  
 注意，這邊的 `S` 要大寫
 ```js
@@ -96,7 +96,7 @@ function dice(){
 	document.getElementById("dice").innerHTML=imgtxt;
 }
 ```
-[sample](./dice1/)  
+[sample](https://pcic35-html.github.io/class4/dice1/)  
 [source](https://github.com/pcic35-html/class4/blob/main/dice1/index.html)  
 
 # 擲骰子 III
@@ -150,7 +150,7 @@ function dice(){
 ```
 這樣子剛好可以讓100顆骰子在一個版面內  
 ![Alt text](image/image-5.png)  
-[sample](./dice100/)  
+[sample](https://pcic35-html.github.io/class4/dice100/)  
 [source](https://github.com/pcic35-html/class4/blob/main/dice100/index.html)  
 
 # 擲骰子 IV
@@ -187,12 +187,12 @@ function dice(){
 	document.getElementById("dice").innerHTML=str;//更新結果
 }
 ```
-[sample](./dice_pro/)  
+[sample](https://pcic35-html.github.io/class4/dice_pro/)  
 [source](https://github.com/pcic35-html/class4/blob/main/dice_pro/index.html)  
 
 恭喜你，完成第一個網頁小遊戲：擲骰子  
 
-# 嵌入內容
+# `HTML` 嵌入內容
 找尋一隻YT影片，點擊分享，應該會出現一個`嵌入`的選項  
 ![Alt text](image/image-6.png)  
 他會給你一串`HTML`程式碼  
@@ -212,8 +212,9 @@ function dice(){
 # `JS` 自動跳轉
 各位，注意聽好，這部分特別重要  
 它的重要性有多高，看我朋友寫的網頁就知道了  
+暴雷：<span style="background-color:#f00;color:#f00;">點進去會出現Never gonna give you up.</span>  
 <https://bennydioxide.github.io>  
-放心，他是`github`的靜態網頁({name}.github.io)，而不是(youtube.com)  
+~~放心，他是`github`的靜態網頁({name}.github.io)，而不是(youtube.com)~~  
 [source](https://github.com/BennyDioxide/bennydioxide.github.io/blob/RickRoll/index.html)  
 `window.location.href`會回傳目前的網址，也就是上面辣個`https://pcicclass--kagariet01.repl.co/dice/`  
 那如果把他設定成其他網址呢，他會把你帶到其他網址  
@@ -221,5 +222,170 @@ function dice(){
 ```js
 window.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 ```
-我想這功能要怎麼用，應該不用我教吧  
-你可以寫一個
+我想這功能要怎麼用 ~~，應該不用我教吧~~  
+首先，先寫一個簡單的網頁  
+![Alt text](image/image-10.png)  
+1. 將焦點放到根目錄上（點下面的空白處）
+2. 創建資料夾，名稱命名為...（自由發揮）
+
+p.s. 如果你忘記做第一步，焦點落在資料夾上，那結果會變成在資料夾中再開一個資料夾，這不是我們想要的結果  
+![Alt text](image/image-16.png)  
+
+接著，新增一個`index.html`檔案  
+![Alt text](image/image-18.png)  
+
+網頁至少要包含`<title>`，其他可以不用（因為我們只是要搞人，所以不用太認真）  
+p.s. 可以複製之前寫過的內容，加快網頁開發速度  
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ET01的網頁</title>
+	</head>
+</html>
+```
+![Alt text](image/image-9.png)  
+把網址貼到FB上，看起來真是天真無邪的網頁  
+接著，我們要在`<body>`裡面加入一個`<script>`  
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ET01的網頁</title>
+	</head>
+	<body>
+		<script>
+			window.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";//  當然的，可以是其他網址
+		</script>
+	</body>
+</html>
+```
+當載入網頁時，會執行指令`window.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";`  
+將使用者跳轉到`https://www.youtube.com/watch?v=dQw4w9WgXcQ`  
+然後，你的朋友就被坑了  
+免責聲明：此網站請謹慎服用，若造成任何感情上的傷害，本人概不負責  
+[sample](https://pcic35-html.github.io/class4/rick/)  
+[source](https://github.com/pcic35-html/class4/blob/main/rick/index.html)  
+
+# ?
+為甚麼標題打`?`，因為某些網址後面會有`?`，然後後面會有一些參數 ~~好爛~~  
+格式如下  
+```txt
+https://example.com
+?
+參數1=值1
+&
+參數2=值2
+&
+key=value
+
+......
+
+（合併成一行）
+https://example.com?參數1=值1&參數2=值2&參數n=值n
+```
+舉個例子：`https://www.youtube.com/watch?v=dQw4w9WgXcQ`  
+代表網頁是`https://www.youtube.com/watch`，後面的`v=dQw4w9WgXcQ`是參數  
+在社長的網頁也能看到同樣的用法  
+![Alt text](image/image-11.png)  
+參數`p=11`代表這是第11篇文章  
+我們知道可以用`window.location.search`來取得參數，也就是`?`後面的那串東西（包含`?`）  
+![Alt text](image/image-12.png)  
+因為這兩行指令特別相近，怕有人搞混，這邊對比一下兩者差別  
+- `window.location.href` 回傳完整網址 `https://www.com/?a=1`
+- `window.location.search` 只回傳參數 `?a=1`
+
+而我們可以用`URLSearchParams()`來解析參數  
+先試著用下列指令列出所有參數  
+p.s. 建議直接在終端機輸入以下指令  
+```js
+let parameterTXT=window.location.search;//  取得參數（未解析）
+let parameter=new URLSearchParams(parameterTXT);//  解析參數
+//p.s. URLSearchParams() 前面要加new
+console.log(parameter);//  列出所有參數
+```
+![Alt text](image/image-13.png)  
+看到最下面的`URLSearchParams { 你的參數資料 }`就代表參數解析成功  
+接下來，我們要取得參數的值  
+假設我們要取得`p`的值  
+```js
+let val_you_want=parameter.get("你想要取得的值的key，格式為字串");//  取得參數"你想要取得的值的key，格式為字串"的值
+let val_p=parameter.get("p");//  取得參數"p"的值
+console.log(val_p);//  列出參數"p"的值
+```
+![Alt text](image/image-14.png)  
+
+# `JS` `dict` 字典
+`dict`是一種資料結構，可以將資料以`key`和`value`的形式儲存  
+我們提供`key`，就可以取得`value`  
+```js
+let dict={
+	"key1":"value1",
+	"key2":"value2"
+}
+//  一個字典索引格式為  "key":"value"
+//  兩個字典索引之間要有逗號 ,
+//  請記住：最後一個字典索引後面不要加逗號
+//  不然會錯誤
+//  "value"可以改為其他東西
+//  例如數字 123
+//  字串 "abc"
+//  又或是另一個字典 {"key":"value"}
+
+let val=dict["key1"];//  取得字典"dict"的"key1"的值
+console.log(val);//  列出"key1"的值
+```
+![Alt text](image/image-15.png)  
+
+# 自己來做短網址
+分享連結時，常常遇到這種情況  
+```txt
+https://docs.******.***/document/d/1R******WHuMbd6xbber********p4XlsZAWQc-U2z7Q/edit*****drive_web****d***12559****3394****18
+```
+p.s. 網址已打碼  
+特別的長  
+這個時候，就要用短網址了  
+然後就會得到  
+```txt
+https://reurl.cc/V4yGm5
+```
+多個短網址混在一起，很容易混亂  
+如果後面的key(?)可以自行設定，就不會混亂了  
+```txt
+https://kagariet01.github.io/?s=rickroll
+```
+我們可以直接看出來：點進去就準備被瑞克搖了  
+現在，我們就來做這個東西  
+老樣子，先建立一個資料夾，名稱隨意，但建議短一點  
+![Alt text](image/image-17.png)  
+在裡面新增`index.html`檔案  
+![Alt text](image/image-18.png)  
+因為我們只是要寫自動跳轉的網頁，所以只要寫`<script>`就好  
+~~雖然沒有不行，但這樣寫有點詭譎~~
+（可以視需要在`<body>`裡面寫一些說明，或者放一些連結，變成連結集中站）  
+```html
+<script>
+	let dict={//  這個dict將存入我們短網址的key(縮寫)和value(要跳轉過去的網址)
+		"g":"https://www.google.com/",
+		"y":"https://www.youtube.com/",
+		"rickroll":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		"kagariet01":"https://kagariet01.github.io/about"
+	}
+	let parameter=new URLSearchParams(window.location.search);//  解析參數
+	let val=parameter.get("s");//  取得參數"s"的值
+	console.log("短網址key為"+val);//  列出參數"s"的值
+	if(val!=null){//  確保參數"s"有值
+		if(dict[val]!=null){//  確保dict有參數"s"的值
+			window.location.href=dict[val];//  跳轉到dict的參數"s"的值
+		}
+	}
+	console.log("跳轉失敗");
+</script>
+```
+[sample](https://pcic35-html.github.io/class4/s)  
+[source](https://github.com/pcic35-html/class4/blob/main/s/index.html)  
+如果你足夠瘋狂，可以把前面的網址背起來，然後把所有你常用的網站加進`dict`裡面  
+
+
+
+

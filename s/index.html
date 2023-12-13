@@ -1,0 +1,17 @@
+<script>
+	let dict={//  這個dict將存入我們短網址的key(縮寫)和value(要跳轉過去的網址)
+		"g":"https://www.google.com/",
+		"y":"https://www.youtube.com/",
+		"rickroll":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		"kagariet01":"https://kagariet01.github.io/about"
+	}
+	let parameter=new URLSearchParams(window.location.search);//  解析參數
+	let val=parameter.get("s");//  取得參數"s"的值
+	console.log("短網址key為"+val);//  列出參數"s"的值
+	if(val!=null){//  確保參數"s"有值
+		if(dict[val]!=null){//  確保dict有參數"s"的值
+			window.location.href=dict[val];//  跳轉到dict的參數"s"的值
+		}
+	}
+	console.log("跳轉失敗");
+</script>
