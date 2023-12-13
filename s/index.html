@@ -1,9 +1,10 @@
 <script>
 	let dict={//  這個dict將存入我們短網址的key(縮寫)和value(要跳轉過去的網址)
-		"g":"https://www.google.com/",
-		"y":"https://www.youtube.com/",
-		"rickroll":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-		"kagariet01":"https://kagariet01.github.io/about"
+		"g":"https://www.google.com/",//  [G]oogle
+		"y":"https://www.youtube.com/",//  [Y]outube
+		"rickroll":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",//  rickroll
+		"kagariet01":"https://kagariet01.github.io/about",// kagariet01
+		"lll":"https://cdn.discordapp.com/attachments/863369982069702657/1183326977940275281/Screenshot_20231208-113145091.jpg"//  [L]ittle [L]o[L]i
 	}
 	let parameter=new URLSearchParams(window.location.search);//  解析參數
 	let val=parameter.get("s");//  取得參數"s"的值

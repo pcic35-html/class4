@@ -340,9 +340,9 @@ console.log(val);//  列出"key1"的值
 # 自己來做短網址
 分享連結時，常常遇到這種情況  
 ```txt
-https://docs.******.***/document/d/1R******WHuMbd6xbber********p4XlsZAWQc-U2z7Q/edit*****drive_web****d***12559****3394****18
+https://docs.google.com/document/d/1R******WHuMbd6xbber********p4XlsZAWQc-U2z7Q/edit*****drive_web****d***12559****3394****18
 ```
-p.s. 網址已打碼  
+p.s. 網址已打碼，此為google drive某份檔案的連結  
 特別的長  
 這個時候，就要用短網址了  
 然後就會得到  
@@ -366,10 +366,11 @@ https://kagariet01.github.io/?s=rickroll
 ```html
 <script>
 	let dict={//  這個dict將存入我們短網址的key(縮寫)和value(要跳轉過去的網址)
-		"g":"https://www.google.com/",
-		"y":"https://www.youtube.com/",
-		"rickroll":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-		"kagariet01":"https://kagariet01.github.io/about"
+		"g":"https://www.google.com/",//  [G]oogle
+		"y":"https://www.youtube.com/",//  [Y]outube
+		"rickroll":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",//  rickroll
+		"kagariet01":"https://kagariet01.github.io/about",// kagariet01
+		"lll":"https://cdn.discordapp.com/attachments/863369982069702657/1183326977940275281/Screenshot_20231208-113145091.jpg"//  [L]ittle [L]o[L]i
 	}
 	let parameter=new URLSearchParams(window.location.search);//  解析參數
 	let val=parameter.get("s");//  取得參數"s"的值
@@ -384,7 +385,17 @@ https://kagariet01.github.io/?s=rickroll
 ```
 [sample](https://pcic35-html.github.io/class4/s)  
 [source](https://github.com/pcic35-html/class4/blob/main/s/index.html)  
-如果你足夠瘋狂，可以把前面的網址背起來，然後把所有你常用的網站加進`dict`裡面  
+- Google: <https://pcic35-html.github.io/class4/s?s=g>
+- YouTube: <https://pcic35-html.github.io/class4/s?s=y>
+- Rickroll: <https://pcic35-html.github.io/class4/s?s=rickroll>
+- 可愛小ㄌㄌ: <https://pcic35-html.github.io/class4/s?s=lll>
+- 我的個人網頁: <https://pcic35-html.github.io/class4/s?s=kagariet01>
+- 我的個人網頁: <https://kagariet01.github.io/about> （結果原始網址更短也更好背哈哈）
+
+
+
+
+
 
 
 
