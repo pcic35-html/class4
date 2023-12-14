@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;" lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<title>擲骰子</title>
+		<link rel="stylesheet" href="dark.css" id="style_css">
+		<style>
+			body{
+				min-height:100%;
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-size: 16px;
+			}
+			.dice{
+				width:min(80%,800px);
+				height:auto;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: center;
+				align-content: center;
+			}
+			.dice_image{
+				width:40px;
+				height:40px;
+			}
+			input{
+				border: 2px solid #888;
+				border-radius: 4px;
+				margin: 4px;
+				padding: 4px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dice" id="dice">
+			<img src="0.svg" class="dice_image">
+		</div>
+		<input type="number" id="dice_count" value="3" onkeydown="dice()">
+		<input type="submit" onclick="dice();" value="擲骰子">
+		<input type="button" onclick="switch_color();" value="亮、暗色模式切換">
+		<script>
+			function randomint(l,r){
+				let loop=r-l+1;
+				let a=Math.random();
+				a*=loop;
+				a+=l;
+				a=Math.floor(a);
+				return a;
+			}
+			function dice(){
+				let n=document.getElementById("dice_count").value;//取得輸入框的值
+				document.getElementById("dice").innerHTML="";//先把上次的結果清空
+				let str="";
+				for(let i=0;i<n;i++){  //產生n顆骰子
+					let a=randomint(1,6);
+					let imgtxt='<img src="'+String(a)+'.svg" class="dice_image">';
+					str+=imgtxt;//將新的骰子加入
+				}
+				document.getElementById("dice").innerHTML=str;//更新結果
+			}
+
+			let color_id=0;//  0表暗色模式，1表亮色模式
+			let color_lst=[
+				'<link href="dark.css" rel="stylesheet" id="style_css">',//  記住，要加"id"="style_css"
+				'<link href="light.css" rel="stylesheet" id="style_css">'//  不然可能會導致你無法再次存取<link ...>這行code
+			];
+			function switch_color(){
+				color_id++;
+				if(color_id>=2){//  index只能是0,1，如果加到2，就要回到0。類似逾時鐘指到59s，下一秒就會指回0s(60s)
+					color_id=0;
+				}
+				document.getElementById("style_css").outerHTML=color_lst[color_id];//  將<link ...>這行code替換成color_lst[color_id]
+			}
+		</script>
+	</body>
+</html>

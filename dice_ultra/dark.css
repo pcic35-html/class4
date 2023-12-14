@@ -1,0 +1,11 @@
+body{
+	background-color:#000;
+	color:#fff;
+}
+input{
+	background-color: #222;
+	color: #fff;
+}
+img{
+	filter:invert(100%);/*值為0%~100%，0%為原圖，100%為顏色完全反轉*/
+}

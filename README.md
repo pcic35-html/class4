@@ -96,8 +96,8 @@ function dice(){
 	document.getElementById("dice").innerHTML=imgtxt;
 }
 ```
-[sample](https://pcic35-html.github.io/class4/dice1/)  
-[source](https://github.com/pcic35-html/class4/blob/main/dice1/index.html)  
+[`sample`](https://pcic35-html.github.io/class4/dice1/)  
+[`source`](https://github.com/pcic35-html/class4/blob/main/dice1/index.html)  
 
 # 擲骰子 III
 問題又來了，我們做了可以一次骰兩顆骰子的擲骰子web，但ET01還是不滿意，他想要一次骰100顆骰子  
@@ -150,8 +150,8 @@ function dice(){
 ```
 這樣子剛好可以讓100顆骰子在一個版面內  
 ![Alt text](image/image-5.png)  
-[sample](https://pcic35-html.github.io/class4/dice100/)  
-[source](https://github.com/pcic35-html/class4/blob/main/dice100/index.html)  
+[`sample`](https://pcic35-html.github.io/class4/dice100/)  
+[`source`](https://github.com/pcic35-html/class4/blob/main/dice100/index.html)  
 
 # 擲骰子 IV
 沒錯，我們又又双双要寫擲骰子  
@@ -187,8 +187,8 @@ function dice(){
 	document.getElementById("dice").innerHTML=str;//更新結果
 }
 ```
-[sample](https://pcic35-html.github.io/class4/dice_pro/)  
-[source](https://github.com/pcic35-html/class4/blob/main/dice_pro/index.html)  
+[`sample`](https://pcic35-html.github.io/class4/dice_pro/)  
+[`source`](https://github.com/pcic35-html/class4/blob/main/dice_pro/index.html)  
 
 恭喜你，完成第一個網頁小遊戲：擲骰子  
 
@@ -215,7 +215,7 @@ function dice(){
 暴雷：<span style="background-color:#f00;color:#f00;">點進去會出現Never gonna give you up.</span>  
 <https://bennydioxide.github.io>  
 ~~放心，他是`github`的靜態網頁({name}.github.io)，而不是(youtube.com)~~  
-[source](https://github.com/BennyDioxide/bennydioxide.github.io/blob/RickRoll/index.html)  
+[`source`](https://github.com/BennyDioxide/bennydioxide.github.io/blob/RickRoll/index.html)  
 `window.location.href`會回傳目前的網址，也就是上面辣個`https://pcicclass--kagariet01.repl.co/dice/`  
 那如果把他設定成其他網址呢，他會把你帶到其他網址  
 例如  
@@ -264,8 +264,8 @@ p.s. 可以複製之前寫過的內容，加快網頁開發速度
 將使用者跳轉到`https://www.youtube.com/watch?v=dQw4w9WgXcQ`  
 然後，你的朋友就被坑了  
 免責聲明：此網站請謹慎服用，若造成任何感情上的傷害，本人概不負責  
-[sample](https://pcic35-html.github.io/class4/rick/)  
-[source](https://github.com/pcic35-html/class4/blob/main/rick/index.html)  
+[`sample`](https://pcic35-html.github.io/class4/rick/)  
+[`source`](https://github.com/pcic35-html/class4/blob/main/rick/index.html)  
 
 # ?
 為甚麼標題打`?`，因為某些網址後面會有`?`，然後後面會有一些參數 ~~好爛~~  
@@ -383,8 +383,8 @@ https://kagariet01.github.io/?s=rickroll
 	console.log("跳轉失敗");
 </script>
 ```
-[sample](https://pcic35-html.github.io/class4/s)  
-[source](https://github.com/pcic35-html/class4/blob/main/s/index.html)  
+[`sample`](https://pcic35-html.github.io/class4/s)  
+[`source`](https://github.com/pcic35-html/class4/blob/main/s/index.html)  
 - Google: <https://pcic35-html.github.io/class4/s?s=g>
 - YouTube: <https://pcic35-html.github.io/class4/s?s=y>
 - Rickroll: <https://pcic35-html.github.io/class4/s?s=rickroll>
@@ -392,11 +392,179 @@ https://kagariet01.github.io/?s=rickroll
 - 我的個人網頁: <https://pcic35-html.github.io/class4/s?s=kagariet01>
 - 我的個人網頁: <https://kagariet01.github.io/about> （結果原始網址更短也更好背哈哈）
 
+p.s. [社長的個人網頁](https://kagariet01.github.io)可以在網址後面加一些屬性來解鎖隱藏文章  
+提示：你可能需要[原始碼](https://github.com/kagariet01/kagariet01.github.io/blob/main/home.js)  
+
+# `JS` 清單
+和`dict`類似的東西，就是list了  
+```js
+let lst=[
+	"值0",
+	"值1",
+	"值2",
+	"值3"
+];
+console.log(lst[0]);//  回傳lst第0的值 "值0"
+```
+和`dict`不同的是：
+- `dict` 使用`{}`，索引值是字串`"txt"`
+- `list` 使用`[]`，索引值是數字`0`，且從`0`開始
+
+p.s. 要習慣一件事：在電腦中，幾乎所有東西都是從`0`開始，因為 ~~從0開始的異世界生活~~  
+
+# `JS` `outerHTML`
+和`innerHTML`類似，但是`outerHTML`會把外圍的`<div>`也包進去  
+假如我有下面的`HTML`程式碼  
+```html
+<div id="a">
+	你好
+</div>
+```
+那使用`innerHTML`會得到  
+```txt
+你好
+```
+而使用`outerHTML`會得到  
+```txt
+<div id="a">
+	你好
+</div>
+```
+這個指令可以輕鬆控制沒有內容物的`HTML`元素  
+例如`<img>` `<link>` ...  
+```html
+<link href="style.css" rel="stylesheet" id="style_css">
+<script>
+	document.getElementById("style_css").outerHTML="";//  將style.css的link刪除
+</script>
+```
+
+# `JS` 全域變數vs區域變數
+全域變數：在最外層宣告，且可以在任何地方都可以使用  
+區域變數：在某個區域內宣告，且只能在某個區域使用，且離開區域內（例如：函式跑完）就會刪除  
+```html
+<!DOCTYPE html>
+<!--script外面的不是JavaScript程式區，所以最外層不在這-->
+<script>
+	console.log("區域A 開始");
+	console.log("\t在全域宣告變數a，初始值為10");
+	let a=10;
+	console.log("\t變數a為",a);
+	function fn(){
+		console.log("\t\t對a加1");
+		a++;
+		console.log("\t\t變數a為",a);
+		console.log("\t\t建立區域變數b，初始值為100");
+		let b=100;//  建立區域變數
+		console.log("\t\t變數b為",b);
+	}
+	fn();
+	console.log("\t變數a為",a);
+	console.log("\t變數b為",b);//  報錯，因為變數b是區域變數，只能在fn()裡面使用  
+	console.log("區域A 結束");
+</script>
+<p>hi</p>
+<script>
+	console.log("區域B 開始");
+	//為方便說明，我們先說這裡是區域B
+	//這是另一段JavaScript程式區
+	//同樣的，這裡也是最外層，宣告的所有變數都會式全域變數
+	//因為區域A比區域B早執行，所以可以存取區域A的所有東西
+	console.log("\t變數a為",a);
+	fn();
+	console.log("區域B 結束");
+</script>
+```
+![Alt text](image/image-21.png)  
+這張圖告訴我們很多事：
+若有兩個`<script>`，則位於上面(A)的`<script>`內的所有全域變數、函式可以在下面(B)的`<script>`中使用  
+在函式裡面，可以直接使用全域變數，且結果會影響到全域變數  
+在函式裡面，可以建立區域變數，變數只能在函式裡面使用，且離開函式後就會刪除  
 
 
 
+# 擲骰子 V<br>aka 亮/暗色模式切換
+一個優秀的網頁通常都有亮/暗色模式切換的功能  
+所以我們要為我們的擲骰子加上這個功能  
+首先，先建立`<button>`，用來觸發切換的函式
+```html
+<button onclick="switch_color();">亮、暗色模式切換</button>
+```
+接著，我們在同層目錄中建立兩個檔案：`light.css`,`dark.css`  
+顧名思義，`light.css`是亮色模式的`CSS`，`dark.css`是暗色模式的`CSS`  
+`light.css` 範例  
+```css
+body{
+	background-color:#fff;
+	color:#000;
+}
+```
+`dark.css` 範例  
+```css
+body{
+	background-color:#000;
+	color:#fff;
+}
+```
+接者，我們要建立一個全域變數，用來記錄目前是亮色模式還是暗色模式  
+並建立一個清單，用來撰寫被切換的`HTML`程式碼  
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>擲骰子</title>
+		<link href="light.css" rel="stylesheet" id="style_css">
+	</head>
+	<body>
+		<!--原本的擲骰子code不要刪掉歐-->
+		<!--直接在下面新增這些程式碼-->
+		<button onclick="switch_color();">亮、暗色模式切換</button>
+		<script>
+			let color_id=0;//  0表暗色模式，1表亮色模式
+			let color_lst=[
+				'<link href="dark.css" rel="stylesheet" id="style_css">',//  記住，要加"id"="style_css"
+				'<link href="light.css" rel="stylesheet" id="style_css">'//  不然可能會導致你無法再次存取<link ...>這行code
+			];
+			function switch_color(){
+				//下面有程式碼+註解
+			}
+		</script>
+	</body>
+</html>
+```
+接著，撰寫切換的函式  
+```js
+function switch_color(){
+	color_id++;
+	if(color_id>=2){//  index只能是0,1，如果加到2，就要回到0。類似逾時鐘指到59s，下一秒就會指回0s(60s)
+		color_id=0;
+	}
+	document.getElementById("style_css").outerHTML=color_lst[color_id];//  將<link ...>這行code替換成color_lst[color_id]
+}
+```
+然後就完成...了？  
+![Alt text](image/image-22.png)  
+阿，我的圖片是黑的，他和背景合為一體，所以看不到  
+沒關係，我們讓顏色反轉，醬子就看得到了  
+```css
+img{
+	filter:invert(100%);/*值為0%~100%，0%為原圖，100%為顏色完全反轉*/
+}
+```
+把這幾行加入`dark.css`中，就完成了  
+![Alt text](image/image-25.png)  
+有興趣的人可以參考[CSS圖片濾淨參考資料](https://ithelp.ithome.com.tw/articles/10218835)  
+裡面有很多濾鏡的玩法  
+這邊只介紹顏色反轉  
+[`sample`](https://pcic35-html.github.io/class4/dice_ultra/)  
+[`sourc`](https://github.com/pcic35-html/class4/blob/main/dice_ultra/index.html)  
 
+# 參考資料
+[Day20【主題五：濾鏡、混合、裁切與遮罩】CSS濾鏡](https://ithelp.ithome.com.tw/articles/10218835)
 
+# LICENSE
+[`This work`](https://pcic35-html.github.io/class4) ([`source`](https://github.com/pcic35-html/class4/blob/main/README.md)) © 2023 by [KagariET01] is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit <http://creativecommons.org/licenses/by-nc-sa/4.0/>  
 
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
 
-
+[KagariET01]: https://kagariet01.github.io/about
