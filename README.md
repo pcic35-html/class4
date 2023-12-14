@@ -536,7 +536,7 @@ body{
 ```js
 function switch_color(){
 	color_id++;
-	if(color_id>=2){//  index只能是0,1，如果加到2，就要回到0。類似逾時鐘指到59s，下一秒就會指回0s(60s)
+	if(color_id>=2){//  index只能是0,1，如果加到2，就要回到0。
 		color_id=0;
 	}
 	document.getElementById("style_css").outerHTML=color_lst[color_id];//  將<link ...>這行code替換成color_lst[color_id]
