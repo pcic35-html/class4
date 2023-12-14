@@ -289,7 +289,7 @@ https://example.com?參數1=值1&參數2=值2&參數n=值n
 在社長的網頁也能看到同樣的用法  
 ![Alt text](image/image-11.png)  
 參數`p=11`代表這是第11篇文章  
-我們知道可以用`window.location.search`來取得參數，也就是`?`後面的那串東西（包含`?`）  
+我們可以用`window.location.search`來取得參數，也就是`?`後面的那串東西（包含`?`）  
 ![Alt text](image/image-12.png)  
 因為這兩行指令特別相近，怕有人搞混，這邊對比一下兩者差別  
 - `window.location.href` 回傳完整網址 `https://www.com/?a=1`
